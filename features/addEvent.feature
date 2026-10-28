@@ -1,5 +1,5 @@
 Feature: Add Event End to End flow
-    @smoke @regression @TC001
+    @smoke @regression @TC003
     Scenario: Verify the Add Event Flow End to End
      Given I launch the browser and enter the URL
      When I Enter Valid Username
@@ -21,3 +21,17 @@ Feature: Add Event End to End flow
       | imageUrl    | https://picsum.photos/400/300 |
      When I CLick on Add Event button
      Then I should See Event is created successfully
+     When I Click on Home link
+     Then I should see created event on the page 
+     When I Click on Book now for Created Event
+     Then I should see booking page
+     When I Click on + icon 2 times 
+     Then I should see ticket count should be 3 
+     When I enter booking details
+       | FullName     |      Siddhesh           | 
+       | Email        |     sid123@yopmail.com  |
+       | Phone Number | 8080897678              |
+     When I click on Confirm booking button
+     Then I should See Booking confirmation message
+     When I click on View My Bookings
+     Then the total amount should be correct in My Bookings for 3 tickets
